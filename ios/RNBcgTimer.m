@@ -9,5 +9,12 @@
 }
 RCT_EXPORT_MODULE()
 
+RCT_EXPORT_METHOD(changeStatus:(BOOL *)status)
+{
+    NSUserDefaults* def = [[NSUserDefaults alloc] init];
+    [def setBool:status forKey:@"status"];
+    [def synchronize];
+}
+
 @end
   
